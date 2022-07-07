@@ -1,0 +1,41 @@
+@import '_vars';
+@import './components/_header';
+@import './components/_item';
+@import './components/_main';
+
+
+html,body {
+  font-size: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  font-family: var(--font-family);
+  min-height: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
