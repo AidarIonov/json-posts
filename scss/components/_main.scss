@@ -1,17 +1,100 @@
 @import '../mixins';
 
-.pagination {
-  font-size: 1.6rem;
-  margin-top: 50px;
-  padding: 10px;
-  @include flex(center, center);
-  li:not(:last-child) {
-    margin-right: 20px;
+.blogs__container {
+  margin: 1rem auto;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+  position: relative;
+}
+
+.blogs-content {
+  margin: 2rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.2rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.paginate-btn {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  background-color: $primary;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.blog {
+  position: relative;
+  box-shadow: 0px 3.6px 10px rgba(0, 0, 0, 0.035),
+    0px 29px 80px rgba(0, 0, 0, 0.07);
+  padding: 25px;
+  border-radius: 4px;
+  position: relative;
+  &:hover &__edit {
+    opacity: 1;
   }
-  &__prev {
-    margin-right: 30px;
+  &__edit {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transition: 0.3s all ease;
+    cursor: pointer;
   }
-  &__next {
-    margin-left: 30px;
+  &__details {
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
+  &__details h3.blog__title {
+    font-size: 1.1rem;
+    color: $primary;
+    margin-bottom: 0.4rem;
+  }
+  &__details p.blog__text {
+    font-size: 0.88rem;
+    color: $primary;
+    margin: 0.3rem 0rem;
+    margin-bottom: 0.7rem;
+  }
+  &__text {
+    flex: 1 0 auto;
+  }
+  &__readmore {
+    background-color: $primary;
+  }
+  &__btns {
+    display: flex;
+    flex: 0 0 auto;
+  }
+  &__remove {
+    background-color: red;
+    color: #000000;
+  }
+  span {
+    color: $primary;
+  }
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 3px;
+  font-weight: 600;
 }

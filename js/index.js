@@ -1,41 +1,30 @@
-import { renderPosts } from './view.js'
-import { createState, combine } from './lib/state.js'
-// import { filteredPosts } from "./model.js"
-// import { userId, posts, query } from "./model.js"
-const API_URL = 'https://jsonplaceholder.typicode.com'
-const mainContainer = document.querySelector('.main__container')
+import { filteredPosts, posts, query, rowsPerPage, userId } from './model.js';
+import { renderPosts } from './view.js';
+const queryField = document.getElementById('query');
+const userIdQuery = document.getElementById('userId');
+export const loadMoreBtn = document.querySelector('.paginate-btn');
 
-export const posts = createState([])
-export const userId = createState(null)
-export const query = createState(null)
-export const filteredPosts = combine(
-  { posts, userId, query },
-  ({ posts, query, userId }) => {
-    return posts.filter((post) => {
-      if (query && !(post.body + post.title).toLowerCase().includes(query))
-        return false
+export const API_URL = 'https://jsonplaceholder.typicode.com';
 
-      if (userId && post.userId !== userId) return false
+export let isLoading = true;
 
-      return true
-    })
-  }
-)
+loadMoreBtn.addEventListener('click', () => {
+  rowsPerPage.setValue(rowsPerPage.value + rowsPerPage.value);
+});
 
-async function fetchPosts() {
-  const res = await fetch(`${API_URL}/posts`)
-  const data = await res.json()
-  posts.setValue(data)
+queryField.addEventListener('input', (e) => {
+  query.setValue(e.target.value.trim().toLowerCase() || null);
+});
+userIdQuery.addEventListener('input', (e) => {
+  userId.setValue(e.target.valueAsNumber);
+});
+
+filteredPosts.watch(renderPosts);
+
+async function displayPosts() {
+  const res = await fetch(`${API_URL}/posts`);
+  const data = await res.json();
+  isLoading = false;
+  posts.setValue(data);
 }
-
-fetchPosts()
-
-document.querySelector('#title').addEventListener('input', (e) => {
-  query.setValue(e.target.value.trim().toLowerCase() || null)
-})
-
-document.querySelector('#userId').addEventListener('input', (e) => {
-  userId.setValue(e.target.valueAsNumber)
-})
-
-filteredPosts.watch(renderPosts)
+displayPosts();

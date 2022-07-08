@@ -14,29 +14,59 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="wrapper">
-      <header class="header">
-        <div class="container">
-          <label>Title <input type="text" id="title" /></label>
-          <label>User id <input type="number" id="userId" value="0" /></label>
-        </div>
-      </header>
-      <main class="main">
-        <div class="main__items">
-          <div class="container main__container">
+    <header class="header">
+      <div class="container">
+        <nav class="header__nav">
+          <a href="#" class="logo brand-name"
+            >Pos<span class="colorize">t</span>s</a
+          >
+          <menu class="primary-menu">
+            <ul class="menus">
+              <li><a href="index.html" class="active">Home</a></li>
+            </ul>
+          </menu>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="blogs-area">
+        <div class="container blogs__container">
+          <div class="blogs-header">
+            <input
+              type="search"
+              class="search-field"
+              placeholder="Title/Body"
+              name="title"
+              id="query"
+            />
+            <input
+              type="number"
+              placeholder="User Id"
+              class="search-field"
+              value="0"
+              min="0"
+              name="userid"
+              id="userId"
+            />
           </div>
+          <div class="content__header"></div>
+          <div class="blogs-content">
+            <div class="single-post-content">
+              <div class="post-details"></div>
+              <div class="comments-area">
+                <h2>Comments -</h2>
+                <div class="comments"></div>
+              </div>
+            </div>
+          </div>
+          <button class="btn paginate-btn">Load more</button>
         </div>
-        <div class="pagination" id='pagination'></div>
-        <!-- <ul class="pagination">
-          <li>
-            <a href="#" class="pagination__prev" id='prevPage'>< previous</a>
-          </li>
-          <li>
-            <a href="#" class="pagination__next" id='nextPage'>next ></a>
-          </li>
-        </ul> -->
-      </main>
-    </div>
+      </section>
+      <div class="modal">
+      
+      </div>
+    </main>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

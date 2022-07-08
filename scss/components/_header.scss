@@ -1,0 +1,41 @@
+@import '../_vars';
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 1.4rem;
+}
+
+.primary-menu {
+  position: relative;
+}
+
+.menus {
+  display: flex;
+  align-items: center;
+  position: relative;
+  li {
+    a {
+      color: $primary;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      &.active {
+        background-color: $secondary;
+        color: #fff;
+      }
+    }
+  }
+}

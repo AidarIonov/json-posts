@@ -1,41 +1,59 @@
-@import '_vars';
+@import '_vars.scss';
 @import './components/_header';
-@import './components/_item';
 @import './components/_main';
+@import './components/_single-post';
 
-
-html,body {
-  font-size: 10px;
-  height: 100%;
-  width: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,600&display=swap');
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
-.wrapper {
-  width: 100vw;
-  font-family: var(--font-family);
-  min-height: 100%;
+body {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.6rem;
+  height: 100%;
+  width: 100%;
+  background: #f5f6fa;
+  padding: 1rem;
 }
 
-.container {
-  max-width: 1140px;
-  width: 100%;
-  margin: 0 auto;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {
   list-style: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+
+.colorize {
+  color: $secondary;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.blogs-header {
+  padding: 1rem;
+  background: #f5f6fa;
+  border-radius: 10px;
+}
+
+.search-field {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  box-shadow: 0px 3.6px 10px rgba(0, 0, 0, 0.035),
+    0px 29px 80px rgba(0, 0, 0, 0.07);
 }
