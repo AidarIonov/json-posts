@@ -1,6 +1,5 @@
 .single-post-content {
   padding: 1rem;
-  position: relative;
   h3 {
     margin-top: 1rem;
   }
@@ -8,7 +7,6 @@
     margin: 0.5rem 0rem;
   }
   .comments-area {
-    position: relative;
     padding: 2rem;
     h2 {
       padding-bottom: 1rem;
@@ -20,17 +18,14 @@
 .comments {
   padding: 1rem;
   padding-left: 2rem;
-  position: relative;
 }
 
 .comment {
   background: #f5f6fa;
   padding: 0.6rem;
   border-radius: 4px;
-  position: relative;
   margin-bottom: 1rem;
   &-header {
-    position: relative;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #e4e5e9;
@@ -39,7 +34,6 @@
   }
   &-body {
     padding: 1rem;
-    position: relative;
     p {
       font-size: 0.9rem;
     }

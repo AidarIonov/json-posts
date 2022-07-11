@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
   background: #fff;
   padding: 1rem;
   border-radius: 3px;
@@ -17,14 +16,10 @@
   font-size: 1.4rem;
 }
 
-.primary-menu {
-  position: relative;
-}
 
 .menus {
   display: flex;
   align-items: center;
-  position: relative;
   li {
     a {
       color: $primary;
@@ -38,4 +33,14 @@
       }
     }
   }
+}
+
+
+.search-field {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  box-shadow: 0px 3.6px 10px rgba(0, 0, 0, 0.035),
+    0px 29px 80px rgba(0, 0, 0, 0.07);
 }

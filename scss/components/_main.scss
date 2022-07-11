@@ -7,16 +7,13 @@
   border-radius: 3px;
   box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
     100px 100px 80px rgba(0, 0, 0, 0.07);
-  position: relative;
 }
 
 .blogs-content {
-  margin: 2rem 0rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1.2rem;
   padding: 1rem;
-  position: relative;
 }
 
 .paginate-btn {
@@ -32,12 +29,16 @@
 }
 
 .blog {
-  position: relative;
   box-shadow: 0px 3.6px 10px rgba(0, 0, 0, 0.035),
     0px 29px 80px rgba(0, 0, 0, 0.07);
   padding: 25px;
   border-radius: 4px;
   position: relative;
+  border-radius: 3px;
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   &:hover &__edit {
     opacity: 1;
   }
@@ -51,21 +52,12 @@
     transition: 0.3s all ease;
     cursor: pointer;
   }
-  &__details {
-    color: #fff;
-    padding: 0.2rem 0.6rem;
-    border-radius: 3px;
-    margin-top: 0.4rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  &__details h3.blog__title {
+  h3.blog__title {
     font-size: 1.1rem;
     color: $primary;
     margin-bottom: 0.4rem;
   }
-  &__details p.blog__text {
+  p.blog__text {
     font-size: 0.88rem;
     color: $primary;
     margin: 0.3rem 0rem;
@@ -75,25 +67,45 @@
     flex: 1 0 auto;
   }
   &__readmore {
+    color: #fff;
     background-color: $primary;
   }
   &__btns {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex: 0 0 auto;
   }
   &__remove {
     background-color: red;
-    color: #000000;
+    color: #fff;
   }
   span {
     color: $primary;
+  }
+}
+.edit-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  &__btn {
+    max-width: 200px;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px 15px;
+  }
+  textarea {
+    resize: none;
   }
 }
 
 .btn {
   border: none;
   cursor: pointer;
-  color: #fff;
   padding: 8px 10px;
   border-radius: 3px;
   font-weight: 600;

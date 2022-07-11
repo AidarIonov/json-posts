@@ -28,7 +28,6 @@
         </nav>
       </div>
     </header>
-
     <main class="main">
       <section class="blogs-area">
         <div class="container blogs__container">
@@ -50,7 +49,29 @@
               id="userId"
             />
           </div>
-          <div class="content__header"></div>
+          <div class="modal">
+            <div class="modal__overlay" data-close="">
+              <div class="modal__content">
+                <div data-close class="modal__close">&times;</div>
+                <form class="edit-form">
+                  <input
+                    id="edit-title"
+                    placeholder="Enter a title"
+                    name="title"
+                    type="text"
+                  />
+                  <span></span>
+                  <textarea
+                    id="edit-body"
+                    placeholder="Enter a body"
+                    name="body"
+                  ></textarea>
+                  <span></span>
+                  <button class="btn edit-form__submit">Update</button>
+                </form>
+              </div>
+            </div>
+          </div>
           <div class="blogs-content">
             <div class="single-post-content">
               <div class="post-details"></div>
@@ -63,10 +84,7 @@
           <button class="btn paginate-btn">Load more</button>
         </div>
       </section>
-      <div class="modal">
-      
-      </div>
     </main>
-    <script type="module" src="./js/index.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
