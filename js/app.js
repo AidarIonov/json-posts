@@ -125,6 +125,7 @@ const displayPostDetails = async (post) => {
   blogContent.innerHTML = `  <h3>Post Id ${post.id}</h3> 
                     <h3 class="title">${post.title}</h3>
                     <p class="single-post-desc">${post.body} post id ${post.id}</p>
+                    <span>User Id: ${post.userId}</span>
                     <h2>Comments:</h2>`;
 
   try {
