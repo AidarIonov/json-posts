@@ -14,13 +14,11 @@ let postsArray = [];
 let rowsPerPage = 8;
 let textToSearch = null;
 let userId = null;
-let isLoading = true;
 
 const fetchPosts = async () => {
   const res = await fetch(`${API_URL}/posts`);
-  const data = await res.json();
-  isLoading = false;
-  localStorage.setItem('posts', JSON.stringify(data));
+  const posts = await res.json();
+  localStorage.setItem('posts', JSON.stringify(posts));
 };
 
 fetchPosts();
